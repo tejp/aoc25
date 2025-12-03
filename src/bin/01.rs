@@ -8,14 +8,14 @@ fn main() {
         })
         .collect();
 
-    let (_, zeros) = input.iter().fold((50, 0), |(pos, zeros), n| {
+    let (_, part1) = input.iter().fold((50, 0), |(pos, zeros), n| {
         let pos = (pos + n).rem_euclid(100);
         (pos, zeros + if pos == 0 { 1 } else { 0 })
     });
 
-    println!("{:?}", zeros);
+    println!("{}", part1);
 
-    let (_, zeros) = input.iter().fold((50, 0), |(pos, zeros), n| {
+    let (_, part2) = input.iter().fold((50, 0), |(pos, zeros), n| {
         let mut zeros = zeros + (pos + n).abs().div_euclid(100);
         if pos + n <= 0 && pos != 0 {
             zeros += 1;
@@ -23,5 +23,5 @@ fn main() {
         ((pos + n).rem_euclid(100), zeros)
     });
 
-    println!("{:?}", zeros);
+    println!("{}", part2);
 }

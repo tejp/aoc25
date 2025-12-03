@@ -8,34 +8,34 @@ fn main() {
         })
         .collect();
 
-    let mut inv_sum = 0;
+    let mut part1 = 0;
 
-    input.iter().for_each(|(l, r)| {
-        for n in *l..*r {
+    input.iter().for_each(|&(l, r)| {
+        for n in l..r {
             let s = n.to_string();
             let (l, r) = s.split_at(s.len() / 2);
             if l == r {
-                inv_sum += n;
+                part1 += n;
             }
         }
     });
 
-    println!("{}", inv_sum);
+    println!("{}", part1);
 
-    inv_sum = 0;
+    let mut part2 = 0;
 
-    input.iter().for_each(|(l, r)| {
-        for n in *l..*r {
+    input.iter().for_each(|&(l, r)| {
+        for n in l..r {
             let s = n.to_string();
             for i in 1..s.len() / 2 + 1 {
                 let v: Vec<&[u8]> = s.as_bytes().chunks(i).collect();
                 if v.iter().all(|&n| n == v[0]) {
-                    inv_sum += n;
+                    part2 += n;
                     break;
                 }
             }
         }
     });
 
-    println!("{}", inv_sum);
+    println!("{}", part2);
 }
