@@ -1,5 +1,5 @@
 fn main() {
-    let input: Vec<(i64, i64)> = aoc24::input(2)
+    let input: Vec<(i64, i64)> = aoc::input(2)
         .trim()
         .split(',')
         .map(|n| {

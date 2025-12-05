@@ -1,5 +1,5 @@
 fn main() {
-    let input: Vec<i64> = aoc24::input(1)
+    let input: Vec<i64> = aoc::input(1)
         .lines()
         .map(|line| {
             let dir = line.chars().next().unwrap();

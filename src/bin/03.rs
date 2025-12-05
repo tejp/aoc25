@@ -1,5 +1,5 @@
 fn main() {
-    let input: Vec<Vec<char>> = aoc24::input(3)
+    let input: Vec<Vec<char>> = aoc::input(3)
         .lines()
         .map(|s| s.chars().collect())
         .collect();
