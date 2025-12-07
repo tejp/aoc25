@@ -5,8 +5,8 @@ use std::sync::OnceLock;
 static INPUT: OnceLock<String> = OnceLock::new();
 
 fn curl_input(day: u32) -> String {
-    let cookie_value = fs::read_to_string("aoc_session_cookie")
-        .expect("No session cookie file \"aoc_session_cookie\"");
+    let cookie_value = fs::read_to_string("aoc_cookie")
+        .expect("No session cookie file \"aoc_cookie\"");
     let output = std::process::Command::new("curl")
         .args([
             "-H".to_string(),
