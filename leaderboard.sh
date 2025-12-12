@@ -57,7 +57,7 @@ download() {
     }
 }
 
-if [ "$UPDATE_FLAG" = "update" ] || [ ! -f "$FILE" ]; then
+if [ "$UPDATE_FLAG" = "update" ] || [ ! -f "$FILE" ] || find "$FILE" -mmin +15 -type f | grep -q .; then
     download
 fi
 
